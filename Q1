@@ -1,0 +1,51 @@
+#include <iostream>
+
+// Function to calculate the factorial of a number
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+// Function to calculate the nth Fibonacci number
+int fibonacci(int n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+// Function to calculate the sum of digits of a number
+int sumOfDigits(int n) {
+    if (n == 0) {
+        return 0;
+    } else {
+        return n % 10 + sumOfDigits(n / 10);
+    }
+}
+
+int main() {
+    int n;
+
+    // Calculate factorial
+    std::cout << "Enter a number: ";
+    std::cin >> n;
+    std::cout << "Factorial of " << n << " is: " << factorial(n) << std::endl;
+
+    // Calculate Fibonacci number
+    std::cout << "Enter the index of the Fibonacci number: ";
+    std::cin >> n;
+    std::cout << "The " << n << "th Fibonacci number is: " << fibonacci(n) << std::endl;
+
+    // Calculate sum of digits
+    std::cout << "Enter a positive integer: ";
+    std::cin >> n;
+    std::cout << "Sum of digits of " << n << " is: " << sumOfDigits(n) << std::endl;
+
+    return 0;
+}
